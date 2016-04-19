@@ -86,6 +86,13 @@ LOCAL_MODULE:= libxml2
 
 include $(BUILD_STATIC_LIBRARY)
 
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := $(common_SRC_FILES)
+LOCAL_C_INCLUDES += $(common_C_INCLUDES)
+LOCAL_SHARED_LIBRARIES += libdl libicuuc $(common_SHARED_LIBRARIES)
+LOCAL_MODULE := libxml2
+include $(BUILD_SHARED_LIBRARY)
+
 
 # For the host
 # ========================================================
